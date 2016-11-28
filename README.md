@@ -23,3 +23,9 @@ NOTES:
 This was not working for the Dockerfile:
 
     CMD ["rdebug-ide", "--host", "127.0.0.1" , "--port", "1234", "--dispatcher-port", "26162", "./myapp.rb"]
+
+To be able to access sinatra from outside container need to do this:
+
+    CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "-p", "1234"]
+
+From:  http://stackoverflow.com/questions/30027248/running-ruby-sinatra-inside-a-docker-container-not-able-to-connect-via-mac-host

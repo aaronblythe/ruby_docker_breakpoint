@@ -19,5 +19,6 @@ WORKDIR /app
 
 RUN cd /app; bundle install --binstubs --path vendor/bundle
 #CMD ["bundle", "exec", "rdebug-ide", "--host", "127.0.0.1" , "--port", "1234", "./myapp.rb"]
-CMD ["bin/rackup", "-p", "4567"]
+#CMD ["bin/rackup", "-p", "1234"]
+CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "-p", "1234"]
 #CMD ["rdebug-ide", "--host", "127.0.0.1" , "--port", "1234", "--dispatcher-port", "26162", "--", "bin/rackup", "-p", "4567"]
