@@ -1,0 +1,3 @@
+
+require './myapp'
+run MyApp
