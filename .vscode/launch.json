@@ -25,8 +25,9 @@
             "name": "Attach",
             "type": "Ruby",
             "request": "attach",
-            "remotePort": "4567",
-            "remoteHost": "localhost",
+            "remotePort": "26162",
+            "remoteHost": "0.0.0.0",
+            "remoteWorkspaceRoot": "/app",
             "cwd": "${workspaceRoot}",
             "showDebuggerOutput": true
         }
