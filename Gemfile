@@ -2,6 +2,6 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
-gem 'ruby-debug-ide'
+#gem 'debase', '>= 0.2.2.beta8'
 gem 'debase'
-gem 'debase-ruby_core_source'
+gem 'ruby-debug-ide'

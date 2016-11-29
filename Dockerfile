@@ -1,4 +1,4 @@
-FROM ruby:2.3
+FROM ruby:2.2
 
 RUN apt-get update -qq && \
     apt-get install -qq -y nginx && \
