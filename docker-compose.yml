@@ -1,0 +1,16 @@
+version: '2'
+services:
+  hellorubyvscode:
+    build: .
+    # To run with the debugger
+    command: bundle exec rdebug-ide --host 0.0.0.0 --port 1234 -- bin/rackup --host 0.0.0.0 -p 4567
+    # To run without the debugger
+    #command: bundle exec /app/bin/rackup --host 0.0.0.0 -p 4568
+    volumes:
+      - .:/app
+    ports:
+      - "1234:1234"
+      - "4567:4567"
+      - "26162:26162"
+
+    
