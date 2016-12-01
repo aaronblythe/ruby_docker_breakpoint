@@ -1,14 +1,11 @@
-
-
 Simple Project to show how to set break points in Visual Studio Code when running a Sinatra app in a Docker Container.
 
 # Usage
 
 I have tested this with Docker for Mac 1.12.3 Stable.
 
-Run:
+Start by cloning the repository
 
-    #Clone the repository
     git clone https://github.com/aaronblythe/ruby_docker_breakpoint.git
     cd ruby_docker_breakpoint
     # Open Visual Studio Code
@@ -17,11 +14,6 @@ Run:
 Build the docker docker container and run it
 
     docker-compose build
-    # I am not sure why running bundle install here is necessary, but with out it docker-compose up will fail with:
-    # hellorubyvscode_1  | bundler: command not found: rdebug-ide
-    # hellorubyvscode_1  | Install missing gem executables with `bundle install`
-    # rubydockerbreakpoint_hellorubyvscode_1 exited with code 127
-    docker-compose run hellorubyvscode bundle install
     docker-compose up
 
 At this point you should see something like:
@@ -53,10 +45,13 @@ Also helpful (setup for RubyMine): http://bzzt.io/posts/running-the-rails-debugg
 
 Notes on how to do the VSCode setup: https://github.com/rubyide/vscode-ruby/wiki/3.-Attaching-to-a-debugger
 
+For the compose stuff, followed the work here: https://docs.docker.com/compose/rails/
 
 # Dockerfile alone
 
 I could not get the Dockerfile to work alone.  It would only work when using Docker Compose as shown above.
+
+Below are my notes on the work I did here:
 
 This was not working for the Dockerfile:
 
@@ -105,7 +100,5 @@ When breakpoint is removed from code then it runs fine (shows "Hello World" in t
 
 Use the disconnect button in VS Code to stop the debugging/application process in Docker.
 
-Progress was made here, but may need to mount the actual drive?
-Maybe need to step back to Ruby 2.1?
-Maybe need to start using addressses other than 0.0.0.0?
+Progress was made here, but may need to mount the actual drive as done in docker-compose 
 

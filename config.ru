@@ -1,3 +1,2 @@
-
 require './myapp'
 run MyApp

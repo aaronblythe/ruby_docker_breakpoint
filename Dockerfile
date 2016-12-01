@@ -22,7 +22,12 @@ EXPOSE 4568
 COPY . /app
 WORKDIR /app
 
-RUN cd /app; bundle install --binstubs --path vendor/bundle
+# have to bundle install to run rdebug-ide
+# have to bundle install --binstubs --path vendor/bundle for sinatra
+# TODO clean this up so only have to run one
+RUN cd /app; bundle install; bundle install --binstubs --path vendor/bundle
+
+# command/CMD is now in the docker-compose
 
 # This command allows access to sinatra from the host
 #CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "-p", "4568"]
